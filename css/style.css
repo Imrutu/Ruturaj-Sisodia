@@ -1,0 +1,21 @@
+/* Main Stylesheet for Portfolio */
+:root {
+  --bg: #0a0e1a;
+  --bg-glass: rgba(20,24,40,0.7);
+  --glass-blur: 18px;
+  --primary: #7f5af0;
+  --primary-neon: #00eaff;
+  --accent: #00eaff;
+  --gradient: linear-gradient(100deg, #7f5af0 0%, #00eaff 100%);
+  --gradient-rev: linear-gradient(100deg, #00eaff 0%, #7f5af0 100%);
+  --text: #f1f1f1;
+  --text-muted: #b0b8d1;
+  --card-bg: rgba(30,34,54,0.6);
+  --card-border: rgba(127,90,240,0.18);
+  --shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+  --radius: 22px;
+  --transition: 0.35s cubic-bezier(.4,0,.2,1);
+  --ripple: rgba(0,234,255,0.18);
+  --navbar-height: 70px;
+}
+/* ...existing CSS from <style> tag... */

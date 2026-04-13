@@ -700,468 +700,49 @@
 <body>
   <canvas id="particles-bg"></canvas>
   <!-- Navbar -->
-  <nav>
-    <div class="nav-logo">Ruturaj S. Sisodia</div>
-    <div class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
-    <ul class="nav-links" id="nav-menu">
-      <li><a href="#hero" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#whyhire">Why Hire Me</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <div id="navbar"></div>
   <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-title">Ruturaj Sinh Sisodia</div>
-    <div class="hero-role">DevOps Engineer | Cloud | Python | GenAI</div>
-    <div class="hero-typing" id="typing"></div>
-    <div class="hero-cta">
-      <button class="btn" id="hireMeBtn"><i class="fas fa-paper-plane"></i>Hire Me</button>
-      <a href="resume.pdf" download class="btn secondary"><i class="fas fa-download"></i>View Resume</a>
-    </div>
-  </section>
+  <div id="hero-section"></div>
   <!-- About -->
-  <section id="about" class="reveal">
-    <h2>About</h2>
-    <div class="glass-card about-content">
-      DevOps Engineer with 2.8+ years of experience designing and managing CI/CD pipelines, cloud infrastructure, and automation frameworks across AWS, Azure, and GCP. Skilled in Infrastructure as Code, containerization (Docker, Kubernetes), and observability practices. Proven ability to improve deployment efficiency, reduce failures, and enhance system reliability through automation and monitoring. Experienced in integrating AI-driven solutions (GenAI, LangChain) into DevOps workflows to optimize incident management and operational intelligence.
-    </div>
-  </section>
+  <div id="about-section"></div>
   <!-- Education -->
-  <section id="education" class="reveal">
-    <h2>Education</h2>
-    <div class="glass-card about-content">
-      <strong>Bachelor of Science (Computer Science)</strong>, Reva University (2020 – 2023)<br>
-      8.07 CGPA
-    </div>
-  </section>
+  <div id="education-section"></div>
   <!-- Skills -->
-  <section id="skills" class="reveal">
-    <h2>Skills</h2>
-    <div class="glass-card">
-      <div class="skills-tags">
-        <span class="skill-tag">AWS</span>
-        <span class="skill-tag">Azure</span>
-        <span class="skill-tag">GCP</span>
-        <span class="skill-tag">CI/CD</span>
-        <span class="skill-tag">Jenkins</span>
-        <span class="skill-tag">GitHub Actions</span>
-        <span class="skill-tag">SonarQube</span>
-        <span class="skill-tag">Nexus</span>
-        <span class="skill-tag">JFrog</span>
-        <span class="skill-tag">Bitbucket</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">Kubernetes (GKE)</span>
-        <span class="skill-tag">Helm</span>
-        <span class="skill-tag">Istio</span>
-        <span class="skill-tag">Terraform</span>
-        <span class="skill-tag">Ansible</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Shell/Bash</span>
-        <span class="skill-tag">Prometheus</span>
-        <span class="skill-tag">Grafana</span>
-        <span class="skill-tag">ELK Stack</span>
-        <span class="skill-tag">LangChain</span>
-        <span class="skill-tag">RAG</span>
-        <span class="skill-tag">Vector DB</span>
-        <span class="skill-tag">FastAPI</span>
-        <span class="skill-tag">PostgreSQL</span>
-        <span class="skill-tag">Elasticsearch</span>
-      </div>
-      <div class="skills-bars">
-        <div class="skill-bar">
-          <div class="skill-bar-label">AWS / Azure / GCP</div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-label">CI/CD & DevOps</div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-label">Containers & Orchestration</div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-label">Infrastructure as Code & Automation</div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="92%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-label">Monitoring & Observability</div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-label">Python & Backend APIs</div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-label">AI/LLM (LangChain, RAG, Vector DB)</div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80%"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div id="skills-section"></div>
   <!-- Experience -->
-  <section id="experience" class="reveal">
-    <h2>Experience</h2>
-    <div class="glass-card">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-role">DevOps Engineer</div>
-          <div class="timeline-company">Kyndryl India</div>
-          <div class="timeline-duration">Jul 2023 – Present, Bengaluru, India</div>
-          <div class="timeline-desc">
-            <ul>
-              <li>Developed GenAI-powered ChatOps assistant using LangChain, RAG, and vector DB for automated incident summaries and log analysis.</li>
-              <li>Built LLM-driven AI agents for infrastructure query handling and incident analysis.</li>
-              <li>Designed, implemented, and maintained end-to-end CI/CD pipelines (Jenkins, Groovy) for multi-environment deployments.</li>
-              <li>Managed and optimized cloud infrastructure (AWS, Azure, GCP) for scalability, high availability, and cost efficiency.</li>
-              <li>Implemented Infrastructure as Code (Terraform, Ansible) and configuration automation pipelines.</li>
-              <li>Built Python and Shell automation frameworks for large-scale infra operations (RHEL upgrades, validation pipelines).</li>
-              <li>Integrated quality gates, security checks, and automated testing into CI/CD (SonarQube, Nexus/JFrog).</li>
-              <li>Engineered observability and monitoring solutions (Prometheus, Grafana, ELK Stack), reducing false alerts by 30–35%.</li>
-              <li>Deployed and managed containerized microservices on Kubernetes (GKE) using Helm and Istio.</li>
-              <li>Developed API-driven backup validation systems (Veeam, Rubrik, NetBackup), improving recovery validation speed by 50%.</li>
-              <li>Diagnosed and resolved 680+ critical incidents across 65,000+ servers, reducing recurring failures by 40%.</li>
-              <li>Collaborated with development, QA, and operations teams to improve deployment workflows and system reliability.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div id="experience-section"></div>
   <!-- Projects -->
-  <section id="projects" class="reveal">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <i class="fas fa-robot"></i>
-        <div class="project-title">GenAI-powered ChatOps Assistant</div>
-        <div class="project-desc">
-          Designed and deployed a ChatOps assistant using LangChain, RAG, and vector DB to analyze infrastructure logs and generate automated incident summaries. Integrated with monitoring APIs and deployed as a Docker container.
-        </div>
-      </div>
-      <div class="project-card">
-        <i class="fas fa-cogs"></i>
-        <div class="project-title">End-to-End CI/CD Pipeline Automation</div>
-        <div class="project-desc">
-          Implemented robust CI/CD pipelines using Jenkins (Declarative & Scripted, Groovy), automating build, test, and deployment workflows across multi-environment setups (Dev, QA, Staging, Production).
-        </div>
-      </div>
-      <div class="project-card">
-        <i class="fas fa-cloud-upload-alt"></i>
-        <div class="project-title">Cloud Infrastructure & Automation</div>
-        <div class="project-desc">
-          Managed and optimized cloud infrastructure (AWS, Azure, GCP) with Terraform and Ansible, focusing on scalability, high availability, and cost efficiency. Automated large-scale infra operations and monitoring.
-        </div>
-      </div>
-      <div class="project-card">
-        <i class="fas fa-microscope"></i>
-        <div class="project-title">Observability & Monitoring Solutions</div>
-        <div class="project-desc">
-          Engineered observability and monitoring solutions (Prometheus, Grafana, ELK Stack), improving system visibility and reducing false alerts by 30–35%.
-        </div>
-      </div>
-    </div>
-  </section>
+  <div id="projects-section"></div>
   <!-- Certifications -->
-  <section id="certifications" class="reveal">
-    <h2>Certifications</h2>
-    <div class="certs-list">
-      <div class="cert-card">
-        <i class="fas fa-certificate"></i>
-        <div class="cert-title">Google Cloud Professional Machine Learning Engineer</div>
-      </div>
-      <div class="cert-card">
-        <i class="fas fa-certificate"></i>
-        <div class="cert-title">Google Cloud Professional Cloud DevOps Engineer</div>
-      </div>
-      <div class="cert-card">
-        <i class="fas fa-certificate"></i>
-        <div class="cert-title">Microsoft Certified: AZ-400 DevOps Engineer Expert</div>
-      </div>
-      <div class="cert-card">
-        <i class="fas fa-certificate"></i>
-        <div class="cert-title">Microsoft Certified: AZ-204 Azure Developer Associate</div>
-      </div>
-      <div class="cert-card">
-        <i class="fas fa-certificate"></i>
-        <div class="cert-title">Microsoft Certified: AI-102 Azure AI Engineer Associate</div>
-      </div>
-      <div class="cert-card">
-        <i class="fas fa-certificate"></i>
-        <div class="cert-title">AWS Certified AI Practitioner</div>
-      </div>
-      <div class="cert-card">
-        <i class="fas fa-certificate"></i>
-        <div class="cert-title">PCAP – Certified Associate Python Programmer</div>
-      </div>
-    </div>
-  </section>
+  <div id="certifications-section"></div>
   <!-- Why Hire Me -->
-  <section id="whyhire" class="reveal">
-    <h2>Why Hire Me</h2>
-    <div class="why-hire">
-      <span style="font-size:1.5em;vertical-align:middle;">🚀</span>
-      I deliver premium, production-grade DevOps solutions with a focus on automation, reliability, and speed. My passion for continuous learning and innovation ensures your infrastructure is always ahead of the curve. Let's build the future together!
-    </div>
-  </section>
+  <div id="whyhire-section"></div>
   <!-- Contact -->
-  <section id="contact" class="reveal">
-    <h2>Contact</h2>
-    <div class="contact-cards">
-      <a href="mailto:rsinh2000@gmail.com" class="contact-card" target="_blank">
-        <i class="fas fa-envelope"></i>
-        <span class="contact-label">rsinh2000@gmail.com</span>
-      </a>
-      <a href="https://www.linkedin.com/in/ruturaj-sisodia" class="contact-card" target="_blank">
-        <i class="fab fa-linkedin"></i>
-        <span class="contact-label">LinkedIn</span>
-      </a>
-      <a href="https://github.com/rsinh2000" class="contact-card" target="_blank">
-        <i class="fab fa-github"></i>
-        <span class="contact-label">GitHub</span>
-      </a>
-      <a href="tel:+919739993484" class="contact-card" target="_blank">
-        <i class="fas fa-phone"></i>
-        <span class="contact-label">+91 9739993484</span>
-      </a>
-    </div>
-  </section>
+  <div id="contact-section"></div>
   <!-- Chat Bubble -->
-  <div class="chat-bubble" id="chatBubble">
-    <i class="fas fa-comment-dots"></i>
-    <div class="chat-bubble-message" id="chatBubbleMsg">
-      Welcome Recruiter 👋 Making your life easier to hire me
-    </div>
-  </div>
-  <div class="chat-bubble-expand" id="chatBubbleExpand">
-    <button class="chat-bubble-close" id="chatBubbleClose"><i class="fas fa-times"></i></button>
-    <div class="chat-bubble-expand-header"><i class="fas fa-robot"></i>Ruturaj's Assistant</div>
-    <div class="chat-bubble-expand-body">
-      Hi there! 👋<br>
-      Want to know more or get in touch? <br>
-      <ul style="margin:0.7em 0 0 1.2em;">
-        <li>Download my resume</li>
-        <li>Contact me directly</li>
-        <li>See my best projects</li>
-      </ul>
-      <br>
-      <a href="mailto:your.email@example.com" class="btn secondary" style="margin-bottom:0.7em;"><i class="fas fa-envelope"></i>Contact Me</a>
-      <a href="resume.pdf" download class="btn"><i class="fas fa-download"></i>Resume</a>
-    </div>
-  </div>
+  <div id="chatbubble-section"></div>
   <!-- Footer -->
-  <footer>
-    &copy; 2026 Ruturaj Sinh Sisodia. All rights reserved.
-  </footer>
-  <!-- JavaScript -->
+  <div id="footer-section"></div>
+  <script src="assets/main.js"></script>
   <script>
-    // Navbar toggle for mobile
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    // Smooth scroll and active link
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href').slice(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          e.preventDefault();
-          window.scrollTo({
-            top: targetSection.offsetTop - 60,
-            behavior: 'smooth'
-          });
-          navMenu.classList.remove('open');
-        }
-      });
-    });
-    window.addEventListener('scroll', () => {
-      let fromTop = window.scrollY + 80;
-      navLinks.forEach(link => {
-        let section = document.querySelector(link.getAttribute('href'));
-        if (
-          section.offsetTop <= fromTop &&
-          section.offsetTop + section.offsetHeight > fromTop
-        ) {
-          navLinks.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Typing effect
-    const typingEl = document.getElementById('typing');
-    const typingTexts = [
-      "Cloud Automation Enthusiast.",
-      "DevOps Engineer @ Kyndryl.",
-      "Pythonic Problem Solver.",
-      "CI/CD Pipeline Architect.",
-      "Let's build something amazing."
-    ];
-    let typingIdx = 0, charIdx = 0, typingDir = 1;
-    function typeEffect() {
-      if (typingDir === 1) {
-        if (charIdx < typingTexts[typingIdx].length) {
-          typingEl.textContent += typingTexts[typingIdx][charIdx++];
-          setTimeout(typeEffect, 55 + Math.random()*40);
-        } else {
-          typingDir = -1;
-          setTimeout(typeEffect, 1200);
-        }
-      } else {
-        if (charIdx > 0) {
-          typingEl.textContent = typingTexts[typingIdx].slice(0, --charIdx);
-          setTimeout(typeEffect, 30);
-        } else {
-          typingDir = 1;
-          typingIdx = (typingIdx + 1) % typingTexts.length;
-          setTimeout(typeEffect, 400);
-        }
-      }
+    // Simple loader for HTML partials
+    function loadSection(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(html => { document.getElementById(id).innerHTML = html; });
     }
-    setTimeout(typeEffect, 600);
-
-    // Animated skill bars
-    function animateSkillBars() {
-      document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width');
-      });
-    }
-    let skillsAnimated = false;
-    window.addEventListener('scroll', () => {
-      const skillsSection = document.getElementById('skills');
-      if (!skillsAnimated && skillsSection.getBoundingClientRect().top < window.innerHeight - 100) {
-        animateSkillBars();
-        skillsAnimated = true;
-      }
-    });
-
-    // Reveal on scroll
-    function revealOnScroll() {
-      document.querySelectorAll('.reveal').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 80) {
-          el.classList.add('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-
-    // Particles background
-    const canvas = document.getElementById('particles-bg');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    function createParticles() {
-      particles = [];
-      let count = Math.floor(window.innerWidth / 12);
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: 1.2 + Math.random() * 2.2,
-          dx: -0.3 + Math.random() * 0.6,
-          dy: -0.3 + Math.random() * 0.6,
-          color: Math.random() > 0.5 ? "#7f5af0" : "#00eaff",
-          alpha: 0.5 + Math.random() * 0.5
-        });
-      }
-    }
-    createParticles();
-    window.addEventListener('resize', createParticles);
-    function drawParticles() {
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      for (let p of particles) {
-        ctx.save();
-        ctx.globalAlpha = p.alpha;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 12;
-        ctx.fill();
-        ctx.restore();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-      }
-      requestAnimationFrame(drawParticles);
-    }
-    drawParticles();
-
-    // Cursor hover effects
-    function addHoverGlow(selector) {
-      document.querySelectorAll(selector).forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          el.style.boxShadow = "0 0 24px 2px var(--primary-neon), 0 8px 32px 0 rgba(127,90,240,0.18)";
-          el.style.transform = "scale(1.04)";
-        });
-        el.addEventListener('mouseleave', () => {
-          el.style.boxShadow = "";
-          el.style.transform = "";
-        });
-      });
-    }
-    addHoverGlow('.glass-card, .project-card, .cert-card, .why-hire, .contact-card, .skill-tag');
-
-    // Button ripple effect
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        btn.classList.remove('ripple');
-        void btn.offsetWidth; // reflow
-        btn.classList.add('ripple');
-        setTimeout(() => btn.classList.remove('ripple'), 500);
-      });
-    });
-
-    // Chat bubble logic
-    const chatBubble = document.getElementById('chatBubble');
-    const chatBubbleMsg = document.getElementById('chatBubbleMsg');
-    const chatBubbleExpand = document.getElementById('chatBubbleExpand');
-    const chatBubbleClose = document.getElementById('chatBubbleClose');
-    // Show welcome message on first visit only
-    if (!localStorage.getItem('chatBubbleWelcomed')) {
-      setTimeout(() => {
-        chatBubbleMsg.classList.add('show');
-        setTimeout(() => {
-          chatBubbleMsg.classList.remove('show');
-          localStorage.setItem('chatBubbleWelcomed', '1');
-        }, 3400);
-      }, 1200);
-    }
-    chatBubble.addEventListener('click', () => {
-      chatBubbleExpand.classList.add('show');
-      chatBubble.style.display = 'none';
-    });
-    chatBubbleClose.addEventListener('click', () => {
-      chatBubbleExpand.classList.remove('show');
-      setTimeout(() => {
-        chatBubble.style.display = 'flex';
-      }, 500);
-    });
-
-    // "Hire Me" button scrolls to contact
-    document.getElementById('hireMeBtn').addEventListener('click', () => {
-      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
-    });
+    loadSection('navbar', 'sections/navbar.html');
+    loadSection('hero-section', 'sections/hero.html');
+    loadSection('about-section', 'sections/about.html');
+    loadSection('education-section', 'sections/education.html');
+    loadSection('skills-section', 'sections/skills.html');
+    loadSection('experience-section', 'sections/experience.html');
+    loadSection('projects-section', 'sections/projects.html');
+    loadSection('certifications-section', 'sections/certifications.html');
+    loadSection('whyhire-section', 'sections/whyhire.html');
+    loadSection('contact-section', 'sections/contact.html');
+    loadSection('chatbubble-section', 'sections/chatbubble.html');
+    loadSection('footer-section', 'sections/footer.html');
   </script>
 </body>
 </html>
