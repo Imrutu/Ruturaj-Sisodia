@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruturaj Sinh Sisodia | DevOps Engineer Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/6e2e5e2e2e.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --bg: #10172a;
+      --bg-light: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --card-bg: #16213e;
+      --border: #334155;
+      --shadow: 0 4px 24px 0 rgba(30,64,175,0.12);
+      --radius: 14px;
+      --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-light);
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 2rem;
+      transition: background var(--transition);
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color var(--transition);
+      position: relative;
+    }
+    nav ul li a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width var(--transition);
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--accent);
+    }
+    nav ul li a:hover::after, nav ul li a.active::after {
+      width: 100%;
+    }
+    .nav-toggle {
+      display: none;
+      font-size: 1.7rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(120deg, var(--bg) 60%, var(--primary-dark) 100%);
+      padding: 4rem 1rem 2rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      animation: fadeInDown 1s;
+    }
+    .hero h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+      animation: fadeInDown 1.2s;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 1.4s;
+    }
+    .hero .cta {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 1.6s;
+    }
+    .hero .cta a {
+      padding: 0.8rem 2rem;
+      border-radius: var(--radius);
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--primary);
+      box-shadow: var(--shadow);
+      transition: background var(--transition), transform var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hero .cta a.secondary {
+      background: var(--bg-light);
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+    .hero .cta a:hover {
+      background: var(--accent);
+      color: var(--bg);
+      transform: translateY(-2px) scale(1.04);
+    }
+    .hero .cta a.secondary:hover {
+      background: var(--primary);
+      color: var(--text);
+    }
+    /* Section Styles */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 2rem 1.5rem;
+      animation: fadeIn 1.2s;
+    }
+    section h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    /* About */
+    .about-content {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      color: var(--text);
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      transition: box-shadow var(--transition);
+    }
+    .about-content:hover {
+      box-shadow: 0 8px 32px 0 rgba(56,189,248,0.15);
+    }
+    /* Skills */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .skill-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem 2rem;
+      min-width: 220px;
+      max-width: 270px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+      border: 1.5px solid var(--border);
+    }
+    .skill-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px 0 rgba(56,189,248,0.18);
+      border-color: var(--accent);
+    }
+    .skill-card i {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+    .skill-card h4 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+    .skill-list {
+      list-style: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      text-align: center;
+    }
+    /* Experience */
+    .exp-timeline {
+      border-left: 3px solid var(--primary);
+      margin-left: 1.5rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+    .exp-item {
+      margin-bottom: 2.5rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+    .exp-dot {
+      position: absolute;
+      left: -2.2rem;
+      top: 0.2rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      background: var(--primary);
+      border-radius: 50%;
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 4px var(--bg-light);
+    }
+    .exp-role {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .exp-company {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .exp-duration {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .exp-desc {
+      color: var(--text);
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    /* Certifications */
+    .certs-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .cert-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.2rem 2rem;
+      min-width: 200px;
+      max-width: 250px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1.5px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .cert-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 8px 32px 0 rgba(56,189,248,0.15);
+      border-color: var(--accent);
+    }
+    .cert-card i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    .cert-title {
+      font-size: 1.05rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    /* Projects */
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem 2rem;
+      min-width: 250px;
+      max-width: 320px;
+      flex: 1 1 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      border: 1.5px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px 0 rgba(56,189,248,0.18);
+      border-color: var(--accent);
+    }
+    .project-card i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .project-title {
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    /* Contact */
+    .contact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.2rem 2rem;
+      min-width: 200px;
+      max-width: 250px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1.5px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      color: var(--text);
+      text-decoration: none;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 8px 32px 0 rgba(56,189,248,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .contact-card i {
+      font-size: 1.7rem;
+      color: var(--primary);
+      transition: color var(--transition);
+    }
+    .contact-card:hover i {
+      color: var(--accent);
+    }
+    .contact-label {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1rem;
+      padding: 2rem 1rem 1rem 1rem;
+      background: var(--bg-light);
+      border-top: 1.5px solid var(--border);
+      margin-top: 2rem;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .skills-grid, .projects-grid, .certs-list, .contact-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      section {
+        padding: 3rem 1rem 1.5rem 1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.7rem 1rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        display: none;
+        background: var(--bg-light);
+        margin-top: 0.7rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 1rem 0.5rem;
+      }
+      nav ul.open {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 1rem;
+      }
+      section h3 {
+        font-size: 1.3rem;
+      }
+      .about-content, .skill-card, .cert-card, .project-card, .contact-card {
+        padding: 1rem 1rem;
+        min-width: unset;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Ruturaj S. Sisodia</div>
+    <div class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+    <ul id="nav-menu">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1>Ruturaj Sinh Sisodia</h1>
+    <h2>DevOps Engineer | Cloud | Python</h2>
+    <p>Empowering businesses with scalable, automated, and secure cloud solutions.<br>Passionate about DevOps, automation, and continuous learning.</p>
+    <div class="cta">
+      <a href="resume.pdf" download><i class="fas fa-download"></i>View Resume</a>
+      <a href="#contact" class="secondary"><i class="fas fa-envelope"></i>Contact Me</a>
+    </div>
+  </section>
+  <!-- About Me -->
+  <section id="about">
+    <h3>About Me</h3>
+    <div class="about-content">
+      <p>
+        Hi! I'm Ruturaj, a DevOps Engineer with 2 years of hands-on experience in cloud platforms, automation, and CI/CD pipelines. I thrive on building robust, scalable, and secure infrastructure using modern DevOps tools and best practices. My passion lies in automating workflows, optimizing cloud deployments, and embracing continuous learning to stay ahead in the ever-evolving tech landscape.
+      </p>
+    </div>
+  </section>
+  <!-- Skills -->
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fas fa-cloud"></i>
+        <h4>Cloud</h4>
+        <ul class="skill-list">
+          <li>Microsoft Azure</li>
+          <li>Google Cloud Platform (GCP)</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-cogs"></i>
+        <h4>DevOps</h4>
+        <ul class="skill-list">
+          <li>CI/CD (Jenkins, GitHub Actions)</li>
+          <li>Docker &amp; Kubernetes</li>
+          <li>Ansible</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h4>Programming</h4>
+        <ul class="skill-list">
+          <li>Python</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Experience -->
+  <section id="experience">
+    <h3>Experience</h3>
+    <div class="exp-timeline">
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-role">Associate Technical Engineer</div>
+        <div class="exp-company">Kyndryl</div>
+        <div class="exp-duration">2023 – Present</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Designed and managed cloud infrastructure on Azure and GCP.</li>
+            <li>Implemented CI/CD pipelines for automated deployments.</li>
+            <li>Automated routine tasks using Python and Ansible.</li>
+            <li>Monitored and optimized system performance and security.</li>
+            <li>Collaborated with cross-functional teams to deliver DevOps solutions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Certifications -->
+  <section id="certifications">
+    <h3>Certifications</h3>
+    <div class="certs-list">
+      <div class="cert-card">
+        <i class="fas fa-certificate"></i>
+        <div class="cert-title">Microsoft Azure AZ-400</div>
+      </div>
+      <div class="cert-card">
+        <i class="fas fa-certificate"></i>
+        <div class="cert-title">GCP DevOps Certification</div>
+      </div>
+      <div class="cert-card">
+        <i class="fas fa-certificate"></i>
+        <div class="cert-title">PCAP (Python)</div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects -->
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="projects-grid">
+      <div class="project-card">
+        <i class="fas fa-project-diagram"></i>
+        <div class="project-title">CI/CD Pipeline Automation</div>
+        <div class="project-desc">
+          Built a robust CI/CD pipeline using Jenkins and GitHub Actions, automating build, test, and deployment processes for faster and reliable releases.
+        </div>
+      </div>
+      <div class="project-card">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <div class="project-title">Cloud Deployment Project</div>
+        <div class="project-desc">
+          Deployed scalable web applications on Azure and GCP, leveraging Infrastructure as Code and container orchestration with Kubernetes.
+        </div>
+      </div>
+      <div class="project-card">
+        <i class="fas fa-robot"></i>
+        <div class="project-title">Python Automation Scripts</div>
+        <div class="project-desc">
+          Developed Python scripts to automate cloud resource provisioning, monitoring, and reporting, reducing manual effort and errors.
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact -->
+  <section id="contact">
+    <h3>Contact</h3>
+    <div class="contact-cards">
+      <a href="mailto:your.email@example.com" class="contact-card" target="_blank">
+        <i class="fas fa-envelope"></i>
+        <span class="contact-label">your.email@example.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/your-linkedin" class="contact-card" target="_blank">
+        <i class="fab fa-linkedin"></i>
+        <span class="contact-label">LinkedIn</span>
+      </a>
+      <a href="https://github.com/your-github" class="contact-card" target="_blank">
+        <i class="fab fa-github"></i>
+        <span class="contact-label">GitHub</span>
+      </a>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Ruturaj Sinh Sisodia. All rights reserved.
+  </footer>
+  <!-- JavaScript for navbar, smooth scroll, and animations -->
+  <script>
+    // Navbar toggle for mobile
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Smooth scroll and active link
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Smooth scroll
+        const targetId = this.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          e.preventDefault();
+          window.scrollTo({
+            top: targetSection.offsetTop - 60,
+            behavior: 'smooth'
+          });
+          navMenu.classList.remove('open');
+        }
+      });
+    });
+
+    // Active link on scroll
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 70;
+      navLinks.forEach(link => {
+        let section = document.querySelector(link.getAttribute('href'));
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Simple fade-in animation on scroll
+    const faders = document.querySelectorAll('section, .hero');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.style.animation = "fadeIn 1.2s";
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
